@@ -21,7 +21,7 @@ export default class ProjectSearch extends Component {
 		if (this.state.searchBy === 'id') {
 			await axios
 				.get(
-					`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/projects/search/id/` +
+					`http://localhost:9000/select/projects/search/id/` +
 						this.state.searchText
 				)
 				.then((res) => {
@@ -32,7 +32,7 @@ export default class ProjectSearch extends Component {
 		} else if (this.state.searchBy === 'description') {
 			await axios
 				.get(
-					`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/projects/search/` +
+					`http://localhost:9000/select/projects/search/` +
 						this.state.searchText
 				)
 				.then((res) => {

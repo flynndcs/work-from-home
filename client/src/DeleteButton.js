@@ -12,7 +12,7 @@ export default class DeleteButton extends Component {
 		console.log('Deleting project with ID: ', this.props.id);
 		await axios
 			.post(
-				`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/delete/projects/${this.props.id}`
+				`http://localhost:9000/delete/projects/${this.props.id}`
 			)
 			.then((res) => {
 				console.log(res);
@@ -21,7 +21,7 @@ export default class DeleteButton extends Component {
 				console.log(error);
 			});
 		await axios
-			.get(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/projects`)
+			.get(`http://localhost:9000/select/projects`)
 			.then((res) => {
 				console.log(res);
 				const projectList = res.data;

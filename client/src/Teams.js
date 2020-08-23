@@ -11,7 +11,7 @@ export default class Teams extends Component {
 	}
 	async componentDidMount() {
 		await axios
-			.get(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/teams`)
+			.get(`http://localhost:9000/select/teams`)
 			.then((res) => {
 				console.log(res);
 				const teamList = res.data;

@@ -20,7 +20,7 @@ export default class TeamForm extends Component {
 	handleSubmit = async (evt) => {
 		evt.preventDefault();
 		await axios
-			.post(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/create/teams`, this.state)
+			.post(`http://localhost:9000/create/teams`, this.state)
 			.then((res) => {
 				console.log(res);
 			})
@@ -28,7 +28,7 @@ export default class TeamForm extends Component {
 				console.log(error);
 			});
 		await axios
-			.get(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/teams`)
+			.get(`http://localhost:9000/select/teams`)
 			.then((res) => {
 				console.log(res);
 				const projectList = res.data;

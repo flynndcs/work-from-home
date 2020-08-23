@@ -12,7 +12,7 @@ export default class CompleteButton extends Component {
 		console.log('Marking complete task: ', this.props.id);
 		await axios
 			.post(
-				`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/update/tasks/${this.props.id}`,
+				`http://localhost:9000/update/tasks/${this.props.id}`,
 				this.state.payload
 			)
 			.then((res) => {
@@ -22,7 +22,7 @@ export default class CompleteButton extends Component {
 				console.log(error);
 			});
 		await axios
-			.get(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/tasks`)
+			.get(`http://localhost:9000/select/tasks`)
 			.then((res) => {
 				console.log(res);
 				const projectList = res.data;

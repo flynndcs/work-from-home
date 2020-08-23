@@ -22,7 +22,7 @@ export default class FeatureForm extends Component {
 	handleSubmit = async (evt) => {
 		evt.preventDefault();
 		await axios
-			.post(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/create/features`, this.state)
+			.post(`http://localhost:9000/create/features`, this.state)
 			.then((res) => {
 				console.log(res);
 			})
@@ -31,7 +31,7 @@ export default class FeatureForm extends Component {
 			});
 		await axios
 			.get(
-				`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/projects/${this.props.id}`
+				`http://localhost:9000/select/projects/${this.props.id}`
 			)
 			.then((res) => {
 				console.log(res);

@@ -15,7 +15,7 @@ export default class Projects extends Component {
 	}
 	async componentDidMount() {
 		await axios
-			.get(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/projects`)
+			.get(`http://localhost:9000/select/projects`)
 			.then((res) => {
 				console.log(res);
 				const projectList = res.data;

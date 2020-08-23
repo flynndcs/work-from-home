@@ -20,7 +20,7 @@ export default class ProjectForm extends Component {
 	handleSubmit = async (evt) => {
 		evt.preventDefault();
 		await axios
-			.post(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/create/projects`, this.state)
+			.post(`http://localhost:9000/create/projects`, this.state)
 			.then((res) => {
 				console.log(res);
 			})
@@ -28,7 +28,7 @@ export default class ProjectForm extends Component {
 				console.log(error);
 			});
 		await axios
-			.get(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/projects`)
+			.get(`http://localhost:9000/select/projects`)
 			.then((res) => {
 				console.log(res);
 				const projectList = res.data;

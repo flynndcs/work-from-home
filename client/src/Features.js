@@ -12,7 +12,7 @@ export default class Features extends Component {
 	async componentDidMount() {
 		await axios
 			.get(
-				`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/projects/${this.props.id}`
+				`http://localhost:9000/select/projects/${this.props.id}`
 			)
 			.then((res) => {
 				console.log(res);

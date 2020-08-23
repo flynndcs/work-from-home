@@ -11,7 +11,7 @@ export default class Employees extends Component {
 	}
 	async componentDidMount() {
 		await axios
-			.get(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/employees`)
+			.get(`http://localhost:9000/select/employees`)
 			.then((res) => {
 				console.log(res);
 				const employeeList = res.data;
@@ -21,7 +21,7 @@ export default class Employees extends Component {
 	handleSubmit = async (evt) => {
 		evt.preventDefault();
 		await axios
-			.post(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/create/employees`, this.state)
+			.post(`http://localhost:9000/create/employees`, this.state)
 			.then((res) => {
 				alert(res);
 				console.log(res);

@@ -12,7 +12,7 @@ export default class Tasks extends Component {
 	}
 	async componentDidMount() {
 		await axios
-			.get(`http://workfromhome-env-1.eba-mwb43dpw.us-east-1.elasticbeanstalk.com/select/tasks`)
+			.get(`http://localhost:9000/select/tasks`)
 			.then((res) => {
 				console.log(res);
 				const teamList = res.data;
